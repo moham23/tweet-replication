@@ -1,0 +1,223 @@
+<!doctype HTML>
+<html>
+
+    <head>
+        <title>Test Website</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script type='text/Javascript'>
+        
+           $(document).ready(function(){
+
+               $("#likes").click(function() {
+                    $('#likes').addClass("read");
+                    $('.number').addClass("display");
+                    $('.number').html(parseInt($('.number').html())+1);
+               });
+
+           });
+        
+        </script>
+
+        <style>
+            
+            body, html{
+                color: #14171a;
+                font-size: 14px;
+            }
+
+            .display{
+                display: initial !important;
+            }
+
+            .number{
+                display: none;
+            }
+
+            strong{
+                font-size: 14px;
+                color: black;
+                margin-right: -2px;
+            }
+
+            .grey-text{
+                font-size: 14px;
+                color: #657786;
+            }
+
+            .tweet-date:before{
+                content: ".";
+                position: relative;
+                top: -4px;
+                right: 2px;
+                padding: 0 2px;
+            }
+
+            .center{
+                display: block;
+                height: 190px;
+                margin: 0 auto;
+                padding: 35px 20px;
+                background: #f6f7f9;
+                width: 42%;
+            }
+
+            .tweet-header{
+                float: left;
+                width: 100%;
+            }
+
+            .tweet-header img{
+                float: left;
+                padding-right: 13px;
+                border-radius: 30px;
+                width: 50px;
+            }
+
+            .tweet-header .header-information{
+                float: left;
+                width: 83%;
+            }
+
+            .tweet-header p{
+                margin-top: 2px;
+                margin-bottom: 20px;
+                color: #14171a;
+            }
+
+            .tweet-more{
+                float: right;
+                font-size: 11px;
+                color: #657786;
+            }
+
+            .tweet-body{
+                float: left;
+                border: 1px solid #eaeaea;
+                padding: 12px;
+                margin-left: 61px;
+                border-radius: 6px;
+                margin-top: -5px;
+                width: 80%;
+                margin-bottom: 22px;
+            }
+            
+            .commenmt-icon:before{
+                font-family: fontAwesome;
+                content: "\f075";
+            }
+
+            .tweet-response-container{
+                float: left;
+                width: 100%;
+                margin-left: 65px;
+            }
+
+            .tweet-response-container a{
+                padding: 0 7px;
+                color: darkgrey;
+            }
+
+            .no-padding{
+                padding-left: 0px !important;
+            }
+
+            .heart-icon:before{
+                font-family: fontAwesome;
+                content: "\f004";
+            }
+
+            .read:before{
+                color: red !important;
+                transition: 1s;
+            }
+
+            .retweet-icon:before{
+                font-family: fontAwesome;
+                content: "\f079";
+            }
+
+            @media(max-width: 900px){
+
+                .center{
+                    height: 220px;
+                }
+
+                .tweet-body{
+                    margin-left: 0px;
+                }
+
+            }
+
+            @media(max-width: 600px){
+                .center{
+                    height: 311px;
+                }
+            }
+
+        
+        </style>
+
+        
+    </head>
+
+    <body>
+
+        <div class="center">
+
+            <div class="tweet-header">
+
+                <img src='horse-js_bigger.png'>
+                
+                <div class="header-information">
+
+                    <strong>Horse JS</strong>
+                    ‏
+                    <span class="grey-text">@horse_js</span>
+                    
+                    <span class="grey-text tweet-date">Feb 21</span>
+
+                    <span class="tweet-more">V</span>
+                    
+                    <p>At least we can all agree</p>
+
+                </div>
+
+            </div>
+
+            <div class="tweet-body">
+
+                <div class='tweet-body-header'>
+
+                    <strong>@horse_js</strong>
+                    
+                    <span class="grey-text">@horse_js</span>
+
+                </div>
+
+                Can we agree that, in 2018, human-readable "View Source" is a constraint the web can discard? 
+                I benefitted from "View Source" too, but today we have an embarrassment of resources and open
+                source examples I would have killed for as a kid.
+
+            </div>
+
+            <div class="tweet-response-container">
+                
+                <a class="no-padding commenmt-icon"></a>
+                
+                <a class='retweet-icon'></a>
+
+                <a id='likes' class="heart-icon"></a>
+                <span class='number'>0</span>
+
+            </div>
+            
+
+        </div>
+
+
+    </body>
+
+</html>
